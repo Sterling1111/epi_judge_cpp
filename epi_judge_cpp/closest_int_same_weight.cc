@@ -12,7 +12,7 @@ unsigned long long ClosestIntSameBitCount1(unsigned long long x) {
 }
 
 //the subtraction hunts for the first 1. When it finds it that bit becomes 0 and all the bits
-//to the right of it become 1. We not the result which makes the 0 bit 1 and all those prapogated
+//to the right of it become 1. We not the result which makes the 0 bit 1 and all those propagated
 //1 bits 0. Then all other digits of x become their inverse. We and with the original x which
 //produces a number that is all 0 except for first set bit in x.
 unsigned long long firstSetBit(unsigned long long x) {
@@ -31,7 +31,7 @@ unsigned long long firstUnsetBit(unsigned long long x) {
 //where the set and unset positions are denoted as an unsigned long number with 1 in the critical bit
 //position and 0 elsewhere. we know that the previous bit must be opposite so swap them and then return.
 unsigned long long ClosestIntSameBitCount2(unsigned long long x) {
-    unsigned long cb2 {std::max(x & ~(x - 1), ~x & (x + 1))};
+    unsigned long long cb2 {std::max(x & ~(x - 1), ~x & (x + 1))};
     return x xor (cb2 | cb2 >> 1);
 }
 
